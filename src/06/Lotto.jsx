@@ -3,29 +3,37 @@ import TailBall from "../components/TailBall";
 import { useState } from "react";
 
 export default function Lotto() {
-  const[numbers, setNums] = useState([]);
-  const[bonus, setbonus] = useState(null);
+  const[tags, setTags] = useState([]);
 
   const handleNum = () => {
-  let nums = [];
-  while(nums.length < 7) {
-    let n = Math.floor(Math.random() * 45) + 1;
-    if (nums.includes(n)) continue;
-    nums.push(n);
+    let nums = new Set([]); // 중복을 허용하지 않는 집합
+    while(nums.size < 7) {
+      let n = Math.floor(Math.random() * 45 + 1);
+      nums.add(n); // 집합에서의 추가는 add()
+    }
+    
+    nums = Array.from(nums); // 배열로 변환
+    let bonus = nums.pop();
+
+    nums.sort((a, b) => a-b);
+    console.log(nums, bonus);
+
+    let tm = nums.map(item => <TailBall n={item} key={item} />);
+    tm = [...tm, <div className="w-20 h-20 flex justify-center items-center font-bold text-2xl" key="plus">+</div>]
+    tm = [...tm, <TailBall n={bonus} key={bonus}/>]
+
+    // console.log(tm);
+    setTags(tm);
   }
-  const bonus = nums.pop();
-  nums.sort((a, b) => a - b);
 
-  setNums(nums);
-  setbonus(bonus);
-
-  console.log("숫자 " + numbers);
-  console.log("보너스 " + bonus);
-}
   return (
-    <div>
-      <TailBall />
-      <TailButton caption="로또번호생성" color="blue" onHandle={handleNum}/>
+    <div className="w-full h-screen flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center h-25">
+        {tags}
+      </div>
+      <div className="mt-5">
+        <TailButton caption="로또번호생성" color="blue" onHandle={handleNum}/>
+      </div>
     </div>
   )
 }

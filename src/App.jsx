@@ -6,6 +6,7 @@ import MyToggle from './05/MyToggle'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Lotto from './06/Lotto'
+import FoodMain from './07/FoodMain'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -24,7 +25,8 @@ function App() {
       {/* <MyToggle /> */}
       <Header />
       <main className='container mx-auto flex flex-col flex-grow overflow-y-auto'>
-        <Lotto/>
+        {/* <Lotto/> */}
+        <FoodMain />
       </main>
       <Footer />
     </div>
