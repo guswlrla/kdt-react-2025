@@ -1,0 +1,19 @@
+import { useState, useEffect } from "react"
+
+function MyClockTime() {
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+        let timerId = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000);
+        return () => clearInterval(timerId);
+    }, [])
+    return (
+        <div className='w-1/2 text-2xl font-bold p-5 m-5 text-center'>
+            현재시간 : {new Date().toLocaleTimeString()}
+        </div>
+    )
+}
+
+export default MyClockTime

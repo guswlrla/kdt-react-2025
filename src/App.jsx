@@ -1,5 +1,5 @@
 import './App.css'
-import MyClock from './02/MyClock'
+import MyClock from './08/MyClock'
 import MyDiv from './03/MyDiv1'
 import MyList from './04/MyList'
 import MyToggle from './05/MyToggle'
@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Lotto from './06/Lotto'
 import FoodMain from './07/FoodMain'
+import MyEffect from './08/MyEffect'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -26,7 +27,9 @@ function App() {
       <Header />
       <main className='container mx-auto flex flex-col flex-grow overflow-y-auto'>
         {/* <Lotto/> */}
-        <FoodMain />
+        {/* <FoodMain /> */}
+        {/* <MyEffect /> */}
+        <MyClock />
       </main>
       <Footer />
     </div>
