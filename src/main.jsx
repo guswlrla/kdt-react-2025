@@ -8,5 +8,5 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* App은 사용자 정의 태그 */}
     <App /> 
-  </StrictMode>,
+  </StrictMode>
 )

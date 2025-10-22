@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Lotto from './06/Lotto'
 import FoodMain from './07/FoodMain'
 import MyEffect from './08/MyEffect'
+import BoxOffice from './09/BoxOffice'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -29,7 +30,8 @@ function App() {
         {/* <Lotto/> */}
         {/* <FoodMain /> */}
         {/* <MyEffect /> */}
-        <MyClock />
+        {/* <MyClock /> */}
+        <BoxOffice />
       </main>
       <Footer />
     </div>
