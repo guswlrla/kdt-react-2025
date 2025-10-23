@@ -15,7 +15,24 @@ export default function BoxOffice() {
         return (year + '-' + String(mon).padStart(2,'0') + '-' + String(day).padStart(2,'0')); // padStart(목표길이, 채울문자)
     }
 
-    const getFetchData = (targetDate) => {
+    // const getFetchData = (targetDate) => {
+    //     const api = import.meta.env.VITE_MV_API;
+    //     // console.log(api);
+        
+    //     const baseUrl = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?'
+    //     let date = targetDate || getYesterday().replaceAll('-', '')
+    //     let url = `${baseUrl}key=${api}&targetDt=${date}`;
+    //     // console.log(url);
+
+    //     fetch(url).then(resp => resp.json())
+    //     .then(data => {
+    //         console.log(data.boxOfficeResult.dailyBoxOfficeList);
+    //         setMovie(data.boxOfficeResult.dailyBoxOfficeList);
+    //     })
+    //     .catch(err => console.log(err));
+    // }
+
+    const getFetchData = async (targetDate) => {
         const api = import.meta.env.VITE_MV_API;
         // console.log(api);
         
@@ -24,12 +41,9 @@ export default function BoxOffice() {
         let url = `${baseUrl}key=${api}&targetDt=${date}`;
         // console.log(url);
 
-        fetch(url).then(resp => resp.json())
-        .then(data => {
-            console.log(data.boxOfficeResult.dailyBoxOfficeList);
-            setMovie(data.boxOfficeResult.dailyBoxOfficeList);
-        })
-        .catch(err => console.log(err));
+        const resp = await fetch(url);
+        const data = await resp.json();
+        setTrs(data.boxOfficeResult.dailyBoxOfficeList);
     }
 
     const handleShowInfo = (mv) => {
