@@ -1,15 +1,22 @@
 const BTStyle = {
     blue : {
-        base : "bg-blue-600",
-        hover : "hover:bg-blue-800"
+      base : "bg-blue-600",
+      hover : "hover:bg-blue-800"
     },
     orange : {
-        base : "bg-orange-600",
-        hover : "hover:bg-orange-800"
+      base : "bg-orange-600",
+      hover : "hover:bg-orange-800"
     },
     lime : {
-        base : "bg-lime-600",
-        hover : "hover:bg-lime-800"
+      base : "bg-lime-600",
+      hover : "hover:bg-lime-800"
+    },
+    gray : {
+      base : "bg-gray-600",
+      hover : "hover:bg-gray-700"
+    },
+    neutral : {
+      base : "bg-neutral-800"
     }
 }
 
