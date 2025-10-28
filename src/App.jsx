@@ -11,6 +11,8 @@ import MyEffect from './08/MyEffect'
 import BoxOffice from './09/BoxOffice'
 import Traffic from './10/Traffic'
 import MyRef from './11/MyRef'
+import RefCal from './12/RefCal'
+import Gallery from './13/Gallery'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -34,8 +36,10 @@ function App() {
         {/* <MyEffect /> */}
         {/* <MyClock /> */}
         {/* <BoxOffice /> */}
-        <Traffic />
+        {/* <Traffic /> */}
         {/* <MyRef /> */}
+        {/* <RefCal /> */}
+        <Gallery />
       </main>
       <Footer />
     </div>

@@ -15,8 +15,18 @@ export default function Traffic() {
     // 사고 데이터
     const [tInfo, setTinfo] = useState([]);
 
-    const getFetchData = () => {
-        setTdata(trafficData);
+    // const getFetchData = () => {
+    //     setTdata(trafficData);
+    // }
+
+    const getFetchData = async () => {
+        const api = import.meta.env.VITE_API_KEY;
+        const baseUrl = "https://api.odcloud.kr/api/15070282/v1/uddi:8449c5d7-8be5-4712-9093-968fc0b2d9fc?page=1&perPage=117&returnType=json&";
+        let url = `${baseUrl}serviceKey=${api}`;
+
+        const resp = await fetch(url);
+        const data = await resp.json(); // 응답 온 것을 json으로 바꿔라
+        setTdata(data.data);
     }
 
     useEffect(() => { // 렌더링 될 때 한 번만 실행 -> 데이터 보여주기
