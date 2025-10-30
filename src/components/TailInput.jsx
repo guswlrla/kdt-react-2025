@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function TailInput({type, name, ref}) {
   return (
-    <div>
-        <input type={type} name={name} ref={ref} className="w-full p-2 bg-white border border-gray-400 rounded"/>
+    <div className='w-full'>
+        <input type={type} name={name} ref={ref} className="w-full p-2 text-gray-900 border border-gray-400 rounded bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"/>
     </div>
   )
 }
