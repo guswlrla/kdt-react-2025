@@ -1,13 +1,12 @@
-import { split } from "postcss/lib/list"
-import bank from "../assets/bank.png"
-
 export default function TailCard({ imgUrl, title, subtitle, tag }) {
   let tags = "";
   if (tag.includes(",")) {
     tags = tag.split(",");
     tags = tags.map(item => <span className="bg-gray-200 rounded-full p-2 inline-flex m-1 text-xs ">#{item}</span>);
   }
-  else tags = tag;
+  else if(tag) {
+    tags = [<span className="bg-gray-200 rounded-full p-2 inline-flex m-1 text-xs ">#{tag}</span>];
+  }
 
   console.log(tags);
   return (

@@ -8,8 +8,6 @@ export default function Gallery() {
   const [data, setData] = useState([]); // 데이터 보여주기
 
   const getFetchData = async (txt) => {
-
-
     const api = import.meta.env.VITE_API_KEY;
     let keyWord = encodeURIComponent(txt);
     const baseUrl = "/photo-api/gallerySearchList1?";

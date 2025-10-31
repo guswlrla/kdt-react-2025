@@ -13,6 +13,8 @@ import Traffic from './10/Traffic'
 import MyRef from './11/MyRef'
 import RefCal from './12/RefCal'
 import Gallery from './13/Gallery'
+import Festival from './14/Festival'
+import RouteMain from './15/RouteMain'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -39,7 +41,9 @@ function App() {
         {/* <Traffic /> */}
         {/* <MyRef /> */}
         {/* <RefCal /> */}
-        <Gallery />
+        {/* <Gallery /> */}
+        {/* <Festival /> */}
+        <RouteMain />
       </main>
       <Footer />
     </div>
