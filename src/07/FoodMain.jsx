@@ -1,6 +1,6 @@
 import FoodCard from './FoodCard'
 import fooddata from './fooddata.json'
-import TailButton from '../components/TaliButton';
+import TailButton from '../components/TailButton';
 import { useState } from 'react'
 
 // 중복없는 카테고리 목록 생성

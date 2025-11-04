@@ -1,4 +1,4 @@
-import TailButton from "../components/TaliButton";
+import TailButton from "../components/TailButton";
 import TailBall from "../components/TailBall";
 import { useState } from "react";
 

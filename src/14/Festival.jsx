@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import TailCard from "../components/TailCard";
+import { Link } from "react-router-dom";
 
 export default function Festival() {
   const [data, setData] = useState([]); // 데이터 보여주기
@@ -50,7 +51,8 @@ export default function Festival() {
           {area}
         </select>
         <div className="mt-4 w-9/10 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {areaFestival.map(item => <TailCard key={item.UC_SEQ} imgUrl={item.MAIN_IMG_THUMB} title={item.MAIN_TITLE.includes('(') ? item.MAIN_TITLE.split('(')[0].trim() : item.MAIN_TITLE.trim()} subtitle={item.SUBTITLE} tag={item.PLACE}/>)}
+          {areaFestival.map((item, idx) => <Link to='/festival/contents' state={{contents:item}} key={item.UC_SEQ + idx}><TailCard key={item.UC_SEQ + idx} imgUrl={item.MAIN_IMG_THUMB} title={item.MAIN_TITLE.includes('(') ? item.MAIN_TITLE.split('(')[0].trim() : item.MAIN_TITLE.trim()} subtitle={item.SUBTITLE} tag={item.PLACE}/></Link>
+          )}
         </div>
       </div>
     </div>

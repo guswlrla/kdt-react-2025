@@ -1,5 +1,5 @@
 import React from 'react'
-import TailButton from '../components/TaliButton'
+import TailButton from '../components/TailButton'
 
 export default function TrafficNav({ title, category, selectC, setSelectC }) {
   return (

@@ -1,6 +1,6 @@
 import TailCard from "../components/TailCard";
 import TailInput from "../components/TailInput";
-import TailButton from "../components/TaliButton";
+import TailButton from "../components/TailButton";
 import { useRef, useEffect, useState } from "react";
 
 export default function Gallery() {
@@ -42,7 +42,7 @@ export default function Gallery() {
     <div className="w-full h-full flex flex-col justify-start items-center">
       <div className="w-9/10 p-5 h-1/4 flex flex-col justify-center items-center">
         <h1 className="w-9/10 p-4 text-2xl font-bold text-center">
-          한국관광공사 사진 정보 서비스
+          한국관광공사 사진 정보 서비스📸
         </h1>
         <div className="grid grid-cols-2 gap-5">
           <TailInput type="text" name="txt1" ref={kwRef} />

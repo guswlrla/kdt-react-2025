@@ -1,4 +1,5 @@
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MyClock from './08/MyClock'
 import MyDiv from './03/MyDiv1'
 import MyList from './04/MyList'
@@ -15,6 +16,8 @@ import RefCal from './12/RefCal'
 import Gallery from './13/Gallery'
 import Festival from './14/Festival'
 import RouteMain from './15/RouteMain'
+import FestivalContents from './14/FestivalContents'
+import ChargeInfo from './16/ChargeInfo'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -26,27 +29,32 @@ function App() {
   return ( // return 할 때 무조건 한 개의 태그만 쓸 수 있음
     // <></> - 프래그먼트 안의 태그들이 프레그먼트에 묶여서 return 됨
     // 컴포넌트는 재사용 가능 (컴포넌트는 UI 조각(모듈))
-    <div className='w-full h-screen flex flex-col overflow-y-hidden'> 
-      {/* <MyClock/> */}
-      {/* <MyDiv /> */}
-      {/* <MyList /> */}
-      {/* <MyToggle /> */}
-      <Header />
-      <main className='container mx-auto flex flex-col flex-grow overflow-y-auto'>
-        {/* <Lotto/> */}
-        {/* <FoodMain /> */}
-        {/* <MyEffect /> */}
-        {/* <MyClock /> */}
-        {/* <BoxOffice /> */}
-        {/* <Traffic /> */}
-        {/* <MyRef /> */}
-        {/* <RefCal /> */}
-        {/* <Gallery /> */}
-        {/* <Festival /> */}
-        <RouteMain />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className='w-full h-screen flex flex-col overflow-y-hidden'>
+        {/* <MyDiv /> */}
+        {/* <MyList /> */}
+        {/* <MyToggle /> */}
+        <Header />
+        <main className='container mx-auto flex flex-col flex-grow overflow-y-auto'>
+          <Routes>
+            <Route path='/' element={<MyClock />} />
+            <Route path='/lotto' element={<Lotto/>} />
+            <Route path='/box' element={<BoxOffice />} />
+            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/festival' element={<Festival />} />
+            <Route path='/festival/contents' element={<FestivalContents />} />
+            <Route path='/charge' element={<ChargeInfo />} />
+          </Routes>
+          {/* <FoodMain /> */}
+          {/* <MyEffect /> */}
+          {/* <Traffic /> */}
+          {/* <MyRef /> */}
+          {/* <RefCal /> */}
+          {/* <RouteMain /> */}
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

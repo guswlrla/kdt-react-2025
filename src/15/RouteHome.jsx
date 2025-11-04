@@ -1,4 +1,4 @@
-import TailButton from '../components/TaliButton'
+import TailButton from '../components/TailButton'
 import { useNavigate } from 'react-router-dom'
 
 export default function RouteHome() {

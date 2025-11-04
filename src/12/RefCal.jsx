@@ -1,4 +1,4 @@
-import TailButton from "../components/TaliButton";
+import TailButton from "../components/TailButton";
 import { useRef, useEffect } from "react";
 
 export default function RefCal() {

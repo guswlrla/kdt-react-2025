@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function BoxOffice() {
     const [movie, setMovie] = useState([]);
+    const [trs, setTrs] = useState([]);
     const [info, setInfo] = useState([]);
 
     const getYesterday = () => {
@@ -65,7 +66,7 @@ export default function BoxOffice() {
     <div className="w-full h-full flex flex-col justify-start items-center mt-10">
         <h1 className="w-9/10 text-2xl font-bold text-center p-5">🎬일일 박스오피스</h1>
         <div className="w-9/10 flex justify-end">
-            <input className="text-gray-700" type="date" onChange={handleSelectDate} max={getYesterday()}></input>
+            <input className="text-gray-700" type="date" onChange={handleSelectDate} max={getYesterday()} defaultValue={getYesterday()}></input>
         </div>
         <table className="w-9/10 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -80,7 +81,7 @@ export default function BoxOffice() {
                 </tr>
             </thead>
             <tbody>
-                {movie.map(item =>
+                {trs.map(item =>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-600"
                     key={item.movieCd} onClick={() => handleShowInfo(item)}>
                     <td scope="row" className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{item.rank}</td>

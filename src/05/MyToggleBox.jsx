@@ -1,4 +1,4 @@
-import TailButton from "../components/TaliButton"
+import TailButton from "../components/TailButton"
 import { useState } from "react";
 
 const BOXStyle = {
