@@ -16,7 +16,7 @@ export default function Gallery() {
     const resp = await fetch(url);
     const data = await resp.json();
     console.log(data.response.body.items.item);
-    setData(data.response.body.items.item);
+    setData(data.response.header.body.items.item);
   }
 
   useEffect(() => { // 처음 렌더링 될 때, 자동으로 input에 포커스 두기
