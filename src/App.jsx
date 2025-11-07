@@ -14,10 +14,12 @@ import Traffic from './10/Traffic'
 import MyRef from './11/MyRef'
 import RefCal from './12/RefCal'
 import Gallery from './13/Gallery'
-import Festival from './14/Festival'
+import Festival from './14_2/Festival'
 import RouteMain from './15/RouteMain'
-import FestivalContents from './14/FestivalContents'
+import FestivalContents from './14_2/FestivalContents'
 import ChargeInfo from './16/ChargeInfo'
+import ChargeDetail from './16/ChargeDetail'
+import JotaiCnt from './17/JotaiCnt'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -44,6 +46,8 @@ function App() {
             <Route path='/festival' element={<Festival />} />
             <Route path='/festival/contents' element={<FestivalContents />} />
             <Route path='/charge' element={<ChargeInfo />} />
+            <Route path='/charge/detail' element={<ChargeDetail />} />
+            <Route path='/jotai' element={<JotaiCnt />} />
           </Routes>
           {/* <FoodMain /> */}
           {/* <MyEffect /> */}

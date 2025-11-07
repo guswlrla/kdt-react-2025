@@ -1,11 +1,14 @@
 import TailSelect from "../components/TailSelect";
-import zcode from "./data/zcode.json"
-import zscode from "./data/zscode.json"
-import kind from "./data/kind.json"
-import kinddetail from "./data/kinddetail.json"
+import zcode from "./data/zcode.json";
+import zscode from "./data/zscode.json";
+import kind from "./data/kind.json";
+import kinddetail from "./data/kinddetail.json";
+import stat from "./data/stat.json";
 import TailButton from "../components/TailButton";
 import { useEffect, useRef, useState } from "react";
 import ChargeCard from "./ChargeCard";
+import ChargeStat from "./ChargeStat";
+import { Link } from "react-router-dom";
 
 export default function ChargeInfo() {
   const [zsc, setZsc] = useState(); // 시도를 선택한 뒤 지역동 목록
@@ -108,11 +111,13 @@ export default function ChargeInfo() {
         <TailButton color='gray' caption='검색' onHandle={handleClick1}/>
         <TailButton color='gray' caption='취소' onHandle={handleClick2}/>
       </div>
-      <div>
-        <ChargeCard color="" title="" num=""/>
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 mt-5">
+        <ChargeCard color="white" title="충전소 수" num={cData.length} />
+        {Object.keys(stat).map(item => <ChargeCard key={stat[item]+item} color="white" title={stat[item]} num={cData.filter(item2 => item2.stat == item).length} />)}
       </div>
       <div>
-        {isLoading && <p className="w-full text-2xl font-bold mt-3 p-5 mb-1 text-left">로딩중...</p>}
+        {isLoading && <div className="w-full text-2xl font-bold mt-3 p-5 mb-1 text-left"><img src="/img/loading.gif" alt="로딩중"/></div>}
+        {cData.map((item, idx) => <Link to='/charge/detail' state={{contents:item}} key={item.chgerId + idx}><ChargeStat key={idx} title={item.statNm} id={item.chgerId} /></Link>)}
       </div>
     </div>
   )
