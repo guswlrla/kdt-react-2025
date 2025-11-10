@@ -1,0 +1,31 @@
+import { useSetAtom } from 'jotai'
+import TailButton from '../components/TailButton'
+import { todosAtom } from './atomsTodo'
+import { useState } from 'react';
+
+export default function TodoItem({todoItem}) {
+  const setTodos = useSetAtom(todosAtom);
+  const [isEdit, setIsEdit] = useState(false);
+  const [editText, setEditText] = useState(todoItem.text);
+
+  const handleDel = () => {
+    setTodos(prev => prev.filter(item => item.id != todoItem.id))
+  }
+  const handleToggle = () => {
+    setTodos(prev => prev.map(t => t.id == todoItem.id ? {...t, completed : !todoItem.completed} : t));
+  }
+  const handleCancel = () => {
+    setIsEdit(false);
+  }
+  const handleSave = () => {
+    setTodos(prev => prev.map(t => t.id == todoItem.id ? {...t, text : editText} : t));
+    setIsEdit(false);
+  }
+  return (
+  <div className='w-full max-w-3xl flex justify-center items-center my-3'>
+    <input type="checkbox" checked={todoItem.completed} onChange={handleToggle} disabled={isEdit} className="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm " />
+      {isEdit ? <input type='text' value={editText} onChange={e => setEditText(e.target.value)} className="flex-1 border border-gray-300 rounded-sm text-sm p-2 mx-2 font-medium text-gray-900 mr-3" /> : <span className={`flex-1 p-2 text-sm font-medium text-gray-900 mr-3 ${todoItem.completed ? "line-through" : ""}`}>{todoItem.text}</span>}
+      {isEdit ? (<div className="flex space-x-2"><TailButton color="gray" caption="저장" onHandle={handleSave} /><TailButton color="gray" caption="취소" onHandle={handleCancel}/></div>) : (<div className="flex space-x-2"><TailButton color="gray" caption="수정" onHandle={() => setIsEdit(true)}/><TailButton color="gray" caption="삭제" onHandle={handleDel} /></div>)}
+  </div>
+  )
+}

@@ -25,7 +25,7 @@ export default function Header() {
             <Link to='/charge' className='hover:text-lg'>전기차충전소</Link>
           </li>
           <li>
-            <Link to='/jotai' className='hover:text-lg'>jotai</Link>
+            <Link to='/todolist' className='hover:text-lg'>Todo</Link>
           </li>
         </ul>
       </nav>
