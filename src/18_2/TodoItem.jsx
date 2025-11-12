@@ -1,25 +1,25 @@
-import { useSetAtom } from 'jotai'
 import TailButton from '../components/TailButton'
-import { todosAtom } from './atomsTodo'
 import { useState } from 'react';
 
-export default function TodoItem({todoItem}) {
-  const setTodos = useSetAtom(todosAtom);
+export default function TodoItem({todoItem, todos, setTodos}) {
   const [isEdit, setIsEdit] = useState(false);
   const [editText, setEditText] = useState(todoItem.text);
 
   const handleDel = () => {
-    setTodos(prev => prev.filter(item => item.id != todoItem.id))
+    const newItem = todos.filter(item => item.id != todoItem.id);
+    setTodos(newItem);
   }
   const handleToggle = () => {
-    setTodos(prev => prev.map(t => t.id == todoItem.id ? {...t, completed : !todoItem.completed} : t));
+    const newItem = todos.map(t => t.id == todoItem.id ? {...t, completed: !todoItem.completed} : t);
+    setTodos(newItem);
   }
   const handleCancel = () => {
     setIsEdit(false);
     setEditText(todoItem.text);
   }
   const handleSave = () => {
-    setTodos(prev => prev.map(t => t.id == todoItem.id ? {...t, text : editText} : t));
+    const newItem = todos.map(t => t.id == todoItem.id ? {...t, text: editText} : t);
+    setTodos(newItem);
     setIsEdit(false);
   }
   return (

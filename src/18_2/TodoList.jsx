@@ -1,0 +1,39 @@
+import { useEffect, useState } from 'react'
+import TodoInput from './TodoInput'
+import TodoItem from './TodoItem'
+
+
+export default function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [completed, setCompleted] = useState(0);
+  const [incompleted, setIncompleted] = useState(0);
+  // console.log(todos);
+
+  const handleSave = (newItem) => {
+    setTodos(newItem);
+    localStorage.setItem("todo", JSON.stringify(newItem));
+  }
+
+  useEffect(() => {
+    // 자바스크립트 객체 -> 문자열
+    // localStorage.setItem("todo", JSON.stringify(newItem));
+
+    // 문자열 -> 자바스크립트 객체
+    const localtodos = JSON.parse(localStorage.getItem("todo")) || [];
+    setTodos(localtodos);
+  }, []);
+
+  useEffect(() => {
+    setCompleted(todos.filter(todo => todo.completed).length);
+    setIncompleted(todos.filter(todo => !todo.completed).length);
+  }, [todos])
+
+  return (
+    <div className='w-full flex flex-col justify-start items-center'>
+      <h1 className='w-full max-w-3xl text-2xl font-bold text-center mt-10'>🎯 할 일 목록</h1>
+      <div className='w-full max-w-3xl bg-gray-100 p-5 my-2 font-bold'>전체 : {todos.length}개 | 완료 : {completed}개 | 미완료 : {incompleted}개 </div>
+      <TodoInput todos={todos} setTodos={handleSave} />
+      {todos.map(i => <TodoItem key={i.id} todoItem={i} todos={todos} setTodos={handleSave}/>)}
+    </div>
+  )
+}

@@ -20,7 +20,7 @@ import FestivalContents from './14_2/FestivalContents'
 import ChargeInfo from './16/ChargeInfo'
 import ChargeDetail from './16/ChargeDetail'
 import JotaiCnt from './17/JotaiCnt'
-import TodoList from './18/TodoList'
+import TodoList from './18_2/TodoList'
 
 /*
 * 컴포넌트의 확장자는 jsx
