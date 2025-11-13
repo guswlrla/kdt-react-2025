@@ -10,7 +10,7 @@ export default function Gallery() {
   const getFetchData = async (txt) => {
     const api = import.meta.env.VITE_API_KEY;
     let keyWord = encodeURIComponent(txt);
-    const baseUrl = "/photo-api/gallerySearchList1?";
+    const baseUrl = "/api/B551011/PhotoGalleryService1/gallerySearchList1?";
     const url = `${baseUrl}serviceKey=${api}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=${keyWord}&_type=json`;
 
     const resp = await fetch(url);

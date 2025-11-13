@@ -27,6 +27,9 @@ export default function Header() {
           <li>
             <Link to='/todolist' className='hover:text-lg'>Todo</Link>
           </li>
+          <li>
+            <Link to='/subway' className='hover:text-lg'>부산실내공기질</Link>
+          </li>
         </ul>
       </nav>
     </header>

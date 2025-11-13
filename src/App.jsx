@@ -21,6 +21,7 @@ import ChargeInfo from './16/ChargeInfo'
 import ChargeDetail from './16/ChargeDetail'
 import JotaiCnt from './17/JotaiCnt'
 import TodoList from './18_2/TodoList'
+import Subway from './19/Subway'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -48,8 +49,8 @@ function App() {
             <Route path='/festival/contents' element={<FestivalContents />} />
             <Route path='/charge' element={<ChargeInfo />} />
             <Route path='/charge/detail' element={<ChargeDetail />} />
-            {/* <Route path='/jotai' element={<JotaiCnt />} /> */}
             <Route path='/todolist' element={<TodoList />} />
+            <Route path='/subway' element={<Subway />}/>
           </Routes>
           {/* <FoodMain /> */}
           {/* <MyEffect /> */}
@@ -57,6 +58,7 @@ function App() {
           {/* <MyRef /> */}
           {/* <RefCal /> */}
           {/* <RouteMain /> */}
+          {/* <JotaiCnt /> */}
         </main>
         <Footer />
       </div>
