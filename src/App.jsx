@@ -20,7 +20,7 @@ import FestivalContents from './14_2/FestivalContents'
 import ChargeInfo from './16/ChargeInfo'
 import ChargeDetail from './16/ChargeDetail'
 import JotaiCnt from './17/JotaiCnt'
-import TodoList from './18_2/TodoList'
+import TodoList from './18_4/TodoList'
 import Subway from './19/Subway'
 
 /*
