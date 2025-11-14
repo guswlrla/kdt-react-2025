@@ -14,6 +14,12 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, ''),
         secure: false,
+      },
+      '/kobisopenapi': {
+        target: 'https://kobis.or.kr/kobisopenapi',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/kobisopenapi/, ''),
+        secure: false,
       }
     }
   }

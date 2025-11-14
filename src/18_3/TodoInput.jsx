@@ -23,6 +23,10 @@ export default function TodoInput({ todos, setTodos }) {
         },
         body: JSON.stringify({ text: inRef.current.value, completed: false })
     });
+
+    if(response.ok) {
+      
+    }
     // const newItem = {
     //   id: Date.now(),
     //   text: todoRef.current.value,
