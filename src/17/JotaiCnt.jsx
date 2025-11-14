@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react"
 import { useAtom } from "jotai";
-import { atomCnt, dbAtomCnt } from "./AtomsCnt";
+import { atomCnt, dbAtomCnt } from "./atomsCnt";
 import { useAtomValue } from "jotai";
 import JotaiBt from "./JotaiBt";
 
