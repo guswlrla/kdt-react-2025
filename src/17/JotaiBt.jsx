@@ -1,5 +1,5 @@
 import { useAtom } from "jotai"
-import { atomCnt } from "./atomsCnt";
+import { atomCnt } from "./AtomsCnt";
 import TailButton from "../components/TailButton"
 
 export default function JotaiBt() {
