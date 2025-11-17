@@ -22,6 +22,7 @@ import ChargeDetail from './16/ChargeDetail'
 import JotaiCnt from './17/JotaiCnt'
 import TodoList from './18_4/TodoList'
 import Subway from './19/Subway'
+import Login from './20/Login'
 
 /*
 * 컴포넌트의 확장자는 jsx
@@ -41,7 +42,8 @@ function App() {
         <Header />
         <main className='container mx-auto flex flex-col flex-grow overflow-y-auto'>
           <Routes>
-            <Route path='/' element={<MyClock />} />
+            <Route path='/' element={<Login />}/>
+            {/* <Route path='/clock' element={<MyClock />} /> */}
             <Route path='/lotto' element={<Lotto/>} />
             <Route path='/box' element={<BoxOffice />} />
             <Route path='/gallery' element={<Gallery />} />
